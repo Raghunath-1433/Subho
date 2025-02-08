@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Proposal for Pandu/Subhoshree</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 90%;
+            width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            animation: popIn 1s ease-in-out;
+            position: absolute;
+            transition: transform 0.5s ease-in-out;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        h1 {
+            color: #d81b60;
+            font-size: 5vw;
+        }
+        .heart {
+            font-size: 12vw;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.4); }
+        }
+        .btn {
+            background: #ff4081;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 4vw;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s ease-in-out;
+            width: 100%;
+            position: relative;
+        }
+        .btn:hover {
+            background: #d81b60;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="your-song.mp3" type="audio/mp3">
+    </audio>
+    <div class="container" id="card">
+        <h1>Ek chutki friendship ki keemat tum kya jano, Pandu/Subhoshree? 💃😂</h1>
+        <p class="heart">❤️</p>
+        <p>You are not just my bestie, you are my <b>partner in madness!</b> 🎭💖</p>
+        <button class="btn" id="funButton">Oh ho! You're about to enter the fun zone! 😜</button>
+    </div>
+    
+    <script>
+        let step = 0;
+        const button = document.getElementById('funButton');
+        const card = document.getElementById('card');
+        
+        button.addEventListener('click', function() {
+            if (step === 0) {
+                card.style.transform = 'translate(-100vw, -100vh)';
+            } else if (step === 1) {
+                card.style.transform = 'translate(100vw, 100vh)';
+            } else if (step === 2) {
+                card.style.transform = 'translate(0, -50px)';
+                setTimeout(() => {
+                    card.style.transform = 'translate(0, 0)';
+                }, 200);
+                setTimeout(() => {
+                    card.style.transform = 'translate(0, -50px)';
+                }, 400);
+                setTimeout(() => {
+                    card.style.transform = 'translate(0, 0)';
+                }, 600);
+            } else if (step === 3) {
+                card.style.animation = 'popIn 0.2s infinite alternate';
+                setTimeout(() => {
+                    card.style.animation = '';
+                    window.location.href = 'page2.html';
+                }, 1500);
+            }
+            step++;
+        });
+    </script>
+</body>
+</html>
